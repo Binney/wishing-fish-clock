@@ -1,0 +1,34 @@
+body {
+  background: #fff;
+}
+
+svg {
+	stroke: #000;
+	font-family: "Brandish", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+.second-hand {
+	stroke-width: 1;
+}
+
+.minute-hand {
+	stroke-width: 2;
+	stroke-linecap: round;
+}
+
+.hour-hand {
+	stroke-width: 3;
+	stroke-linecap: round;
+}
+
+.hands-cover {
+	stroke-width: 3;
+	fill: #a8956a;
+}
+
+.hour-label {
+    font-size: 10px;
+    fill: #a8956a;
+    stroke: #1a4988;
+    stroke-width: 0.3;
+}
