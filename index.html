@@ -4,7 +4,7 @@
         <title>Wishing Fish Clock</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body id="body">
         <!-- Clock flagrantly stolen from http://bl.ocks.org/tomgp/6475678 -->
         <script src="https://d3js.org/d3.v3.min.js"></script>
         <div class="container">
@@ -44,7 +44,7 @@
                </svg>
 
             <script>
-                var radians = 0.0174532925, 
+                const radians = 0.0174532925,
                     clockRadius = 55,
                     margin = 0,
                     width = (clockRadius+margin)*2,
@@ -62,15 +62,15 @@
                     hourLabelRadius = clockRadius - 10
                     hourLabelYOffset = 7;
 
-                var hourScale = d3.scale.linear()
+                const hourScale = d3.scale.linear()
                     .range([0,330])
                     .domain([0,11]);
                 
-                var minuteScale = secondScale = d3.scale.linear()
+                const minuteScale = secondScale = d3.scale.linear()
                     .range([0,354])
                     .domain([0,59]);
                 
-                var handData = [
+                let handData = [
                     {
                         type:'hour',
                         value:0,
@@ -92,6 +92,8 @@
                     }
                 ];
                 
+                const sunrise = d3.interpolate("#68c2d8", "#021b2f");
+
                 function drawClock(){ //create all the clock elements
                     updateData();	//draw them in the correct starting position
                     var face = d3.select("#clock-face");
@@ -149,6 +151,15 @@
                             return 'rotate('+ d.scale(d.value) +')';
                         });
                 }
+
+                function advanceBackground() {
+                    const t = new Date();
+                    const hrs = Math.abs(t.getSeconds() - 30) / 30;
+                    d3.select("#body")
+                        .transition()
+                        .duration(1000)
+                        .style("background", sunrise(hrs));
+                }
                 
                 function updateData(){
                     var t = new Date();
@@ -158,10 +169,12 @@
                 }
                 
                 drawClock();
+                advanceBackground();
                 
                 setInterval(function(){
                     updateData();
                     moveHands();
+                    advanceBackground();
                 }, 1000);
                 
                 d3.select(self.frameElement).style("height", height + "px");
