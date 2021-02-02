@@ -29,7 +29,7 @@
                  <ellipse rx="36.005" ry="36.005" transform="translate(297.639 537.829) rotate(90)" fill="#110200" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.377" stroke="none"/>
                  <ellipse rx="33.755" ry="33.755" transform="translate(297.639 537.829) rotate(90)" fill="#a8956a" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.353" stroke="none"/>
                  <ellipse rx="32.93" ry="32.93" transform="translate(297.639 537.829) rotate(90)" fill="#1a4988" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.345" stroke="none"/>
-                 <g id="clock-face" transform="translate(297.639 541) scale(1 -1)"></g>
+                 <g id="clock-face" transform="translate(297.639 537.829) scale(1 -1)"></g>
                  <path d="M 241.741,493.218 L 253.028,493.218 L 253.028,481.931 L 245.055,483.594 L 241.741,493.218 Z" fill="#8f5325" stroke="none" stroke-linejoin="miter" marker-start="none" marker-end="none"/>
                  <path d="M 353.535,493.218 L 342.248,493.218 L 342.248,481.931 L 350.221,483.594 L 353.535,493.218 Z" fill="#8f5325" stroke="none" stroke-linejoin="miter" marker-start="none" marker-end="none"/>
                  <path d="M 353.536,582.438 L 342.249,582.438 L 342.249,593.725 L 350.222,592.062 L 353.536,582.438 Z" fill="#b67c50" stroke="none" stroke-linejoin="miter" marker-start="none" marker-end="none"/>
@@ -49,9 +49,9 @@
                     margin = 0,
                     width = (clockRadius+margin)*2,
                     height = (clockRadius+margin)*2,
-                    hourHandLength = 2*clockRadius/5,
-                    minuteHandLength = clockRadius - 12,
-                    secondHandLength = clockRadius-20,
+                    hourHandLength = 2 * clockRadius / 5 + 3,
+                    minuteHandLength = clockRadius - 17,
+                    secondHandLength = clockRadius - 20,
                     secondHandBalance = 10,
                     secondTickStart = clockRadius;
                     secondTickLength = -10,
@@ -60,7 +60,7 @@
                     secondLabelRadius = clockRadius + 16;
                     secondLabelYOffset = 5
                     hourLabelRadius = clockRadius - 10
-                    hourLabelYOffset = 7;
+                    hourLabelYOffset = 4;
 
                 const hourScale = d3.scale.linear()
                     .range([0,330])
