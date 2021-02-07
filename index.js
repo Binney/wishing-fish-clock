@@ -10,10 +10,10 @@ const radians = 0.0174532925,
     secondTickStart = clockRadius,
     secondTickLength = -10,
     hourTickStart = clockRadius,
-    hourTickLength = -18
-    secondLabelRadius = clockRadius + 16;
-    secondLabelYOffset = 5
-    hourLabelRadius = clockRadius - 10
+    hourTickLength = -18,
+    secondLabelRadius = clockRadius + 16,
+    secondLabelYOffset = 5,
+    hourLabelRadius = clockRadius - 10,
     hourLabelYOffset = 4;
 
 const hourScale = d3.scale.linear()
@@ -48,8 +48,8 @@ let handData = [
 
 const sunrise = d3.interpolate("#68c2d8", "#021b2f");
 
-function drawClock() { //create all the clock elements
-    updateData();	//draw them in the correct starting position
+function drawClock() {
+    updateData(); // draw them in the correct starting position
     var face = d3.select("#clock-face");
 
     face.selectAll('.hour-label')
@@ -67,7 +67,6 @@ function drawClock() { //create all the clock elements
         .text(function (d) {
             return d;
         });
-
 
     var hands = face.append('g').attr('id', 'clock-hands');
 
@@ -109,10 +108,11 @@ function moveHands() {
 function advanceBackground() {
     const t = new Date();
     const hrs = Math.abs(t.getSeconds() - 30) / 30;
+    console.log(hrs);
     d3.select("#body")
         .transition()
-        .duration(1000)
-        .style("background", sunrise(hrs));
+        .duration(100)
+        .style("background-color", sunrise(hrs));
 }
 
 function updateData() {
