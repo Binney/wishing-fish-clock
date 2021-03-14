@@ -6,7 +6,7 @@ class Clock extends React.Component {
 
     render() {
         return (
-            <svg id="clock" fill="none" fillRule="evenodd" stroke="black" strokeWidth="0.501" strokeLinejoin="bevel" strokeMiterlimit="10" fontFamily="Times New Roman" fontSize="16" version="1.1" overflow="visible" width="683" height="900" viewBox="0 -841.891 189.754 249.005">
+            <svg id="clock" fill="none" fillRule="evenodd" stroke="black" strokeWidth="0.501" strokeLinejoin="bevel" strokeMiterlimit="10" fontSize="16" version="1.1" overflow="visible" width="683" height="900" viewBox="0 -841.891 189.754 249.005">
                 <defs>
                  <radialGradient id="RadialGradient" gradientUnits="userSpaceOnUse" cx="298.286" cy="424.532" r="2.907" gradientTransform="matrix(-0.664093 -0.74765 0.74765 -0.664093 -119.421 504.172)">
                   <stop offset="0" stopColor="#b67c50"/>
