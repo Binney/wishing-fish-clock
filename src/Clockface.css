@@ -14,12 +14,13 @@
 
 .hands-cover {
 	stroke-width: 3;
-	fill: #a8956a;
+	fill: #d0b16b;
 }
 
 .hour-label {
-    font-size: 10px;
-    fill: #a8956a;
-    stroke: #1a4988;
-    stroke-width: 0.3;
+	font-family: 'Amita', 'Brandish', serif;
+    font-size: 12px;
+    fill: #d0b16b;
+    stroke: #112745;
+    stroke-width: 0.5;
 }

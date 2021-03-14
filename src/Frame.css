@@ -12,9 +12,9 @@ g.correct rect.frame-rect {
 }
 
 text.frame-text {
+    font-family: 'Cinzel', serif;
     font-size: 17.78px;
     kerning: auto;
-    font-family: 'Cinzel';
     fill: white;
     stroke: none;
 }
