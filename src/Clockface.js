@@ -67,7 +67,7 @@ class Clockface extends React.Component {
         const hrs = Math.abs(t.getSeconds() - 30) / 30;
         d3.select("body")
             .transition()
-            .duration(100)
+            .duration(1000)
             .style("background-color", sunrise(hrs));
     }
 
