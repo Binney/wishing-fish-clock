@@ -1,0 +1,16 @@
+rect.frame-rect {
+    fill: black;
+    stroke: none;
+}
+
+rect.frame-rect.correct {
+    fill: gold;
+}
+
+text.frame-text {
+    font-size: 17.78px;
+    kerning: auto;
+    font-family: 'Cinzel';
+    fill: white;
+    stroke: none;
+}

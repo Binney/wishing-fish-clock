@@ -1,5 +1,6 @@
 import React from 'react';
 import Clockface from './Clockface';
+import Frame from './Frame';
 
 class Clock extends React.Component {
 
@@ -40,25 +41,11 @@ class Clock extends React.Component {
                     <rect x="75.924" y="639.694" width="37.898" height="2.139" fill="#854f26" stroke="none" strokeLinejoin="miter"/>
                     <ellipse rx="2.907" ry="2.907" transform="translate(94.875 636.593) rotate(131.612)" stroke="none" strokeLinejoin="miter" fill="url(#RadialGradient)"/>
 
-                    <g>
-                        <rect x="0.001" y="812.267" width="189.752" height="29.624" fill="#000000" stroke="none" strokeWidth="0.5" strokeLinecap="round" strokeLinejoin="miter"/>
-                        <text transform="translate(94.601 820.821) scale(1 -1)" kerning="auto" fontSize="17.78" fontFamily="Cinzel" fill="#ffffff" stroke="none" strokeWidth="0.445" strokeLinecap="round" strokeLinejoin="round"><tspan x="-41.914" y="0">NORTH</tspan></text>    
-                    </g>
+                    <Frame id="northFrame" text="NORTH" x="0.001" y="-94.876" transform="translate(94.876, 812) rotate(90)" textTransform="translate(94.601 820.821) scale(1 -1)" textOffset="-41.914"></Frame>
+                    <Frame id="eastFrame" text="EAST" x="-14.812" y="-94.876" transform="translate(174.941 717.389) rotate(180)" textTransform="matrix(0 -1 -1 0 168.674 717.53)" textOffset="-51.499"></Frame>
+                    <Frame id="southFrame" text="SOUTH" x="-14.812" y="-94.876" transform="translate(94.876 608) rotate(-90)" textTransform="translate(94.786 601.434) scale(1 -1)" textOffset="-51.41"></Frame>
+                    <Frame id="westFrame" text="WEST" x="-14.812" y="-94.876" transform="translate(14.813 717.389)" textTransform="matrix(0 1 1 0 21.081 717.604)" textOffset="-47.623"></Frame>
 
-                    <g>
-                        <rect x="-14.812" y="-94.876" width="29.624" height="189.752" transform="translate(174.941 717.389) rotate(180)" fill="#000000" stroke="none" strokeWidth="0.5" strokeLinecap="round" strokeLinejoin="miter"/>
-                        <text transform="matrix(0 -1 -1 0 168.674 717.53)" kerning="auto" fontSize="17.78" fontFamily="Cinzel" fill="#ffffff" stroke="none" strokeWidth="0.445" strokeLinecap="round" strokeLinejoin="round"><tspan x="-51.499" y="0">EAST</tspan></text>
-                    </g>
-
-                    <g>
-                        <rect x="-14.812" y="-94.876" width="29.624" height="189.752" transform="translate(94.876 607.698) rotate(-90)" fill="#000000" stroke="none" strokeWidth="0.5" strokeLinecap="round" strokeLinejoin="miter"/>
-                        <text transform="translate(94.786 601.434) scale(1 -1)" kerning="auto" fontSize="17.78" fontFamily="Cinzel" fill="#ffffff" stroke="none" strokeWidth="0.445" strokeLinecap="round" strokeLinejoin="round"><tspan x="-51.41" y="0">SOUTH</tspan></text>    
-                    </g>
-
-                    <g>
-                        <rect x="-14.812" y="-94.876" width="29.624" height="189.752" transform="translate(14.813 717.389)" fill="#000000" stroke="none" strokeWidth="0.5" strokeLinecap="round" strokeLinejoin="miter"/>
-                        <text transform="matrix(0 1 1 0 21.081 717.604)" kerning="auto" fontSize="17.78" fontFamily="Cinzel" fill="#ffffff" stroke="none" strokeWidth="0.445" strokeLinecap="round" strokeLinejoin="round"><tspan x="-47.623" y="0">WEST</tspan></text>    
-                    </g>
                 </g>
             </svg>
         )
