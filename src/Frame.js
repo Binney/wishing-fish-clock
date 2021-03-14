@@ -1,11 +1,16 @@
 import React from 'react';
 import './Frame.css';
 import checkAnswer from './CheckAnswer';
+import { load, save } from './SaveGame';
 
 class Frame extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {text: props.direction}
+        const { text, correct } = load(props.direction) || {};
+        this.state = {
+            text: text || props.direction,
+            correct: correct
+        }
         this.onKeyDown = this.onKeyDown.bind(this);
     }
 
@@ -18,18 +23,13 @@ class Frame extends React.Component {
         if (e.keyCode >= 65 && e.keyCode <= 90) {
             let newText = this.state.text + e.key.toUpperCase();
             checkAnswer(newText, this.props.direction).then(correct => {
-                if (correct) {
-                    this.setState(state => ({
-                        correct: true,
-                        text: newText
-                    }));
-                } else {
-                    this.setState(state => ({
-                        text: newText
-                    }));
-                }
+                const result = {
+                    correct: correct,
+                    text: newText
+                };
+                save(this.props.direction, result);
+                this.setState(() => result);
             });
-
 
         } else if (e.keyCode === 8) { // backspace
             this.setState(state => ({
