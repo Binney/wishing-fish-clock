@@ -3,6 +3,10 @@ rect.frame-rect {
     stroke: none;
 }
 
+g:focus rect.frame-rect {
+    fill: #66326b;
+}
+
 rect.frame-rect.correct {
     fill: gold;
 }
