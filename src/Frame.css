@@ -7,7 +7,7 @@ g:focus rect.frame-rect {
     fill: #66326b;
 }
 
-rect.frame-rect.correct {
+g.correct rect.frame-rect {
     fill: gold;
 }
 

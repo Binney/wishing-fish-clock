@@ -1,20 +1,37 @@
 import React from 'react';
 import './Frame.css';
+import checkAnswer from './CheckAnswer';
 
 class Frame extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {text: props.text}
+        this.state = {text: props.direction}
         this.onKeyDown = this.onKeyDown.bind(this);
     }
 
     onKeyDown(e) {
-        console.log(e);
+        if (this.state.correct) {
+            // Can't edit after you get it right
+            return;
+        }
+
         if (e.keyCode >= 65 && e.keyCode <= 90) {
-            this.setState(state => ({
-                text: state.text + e.key.toUpperCase()
-            }));
-        } else if (e.keyCode == 8) { // backspace
+            let newText = this.state.text + e.key.toUpperCase();
+            checkAnswer(newText, this.props.direction).then(correct => {
+                if (correct) {
+                    this.setState(state => ({
+                        correct: true,
+                        text: newText
+                    }));
+                } else {
+                    this.setState(state => ({
+                        text: newText
+                    }));
+                }
+            });
+
+
+        } else if (e.keyCode === 8) { // backspace
             this.setState(state => ({
                 text: state.text.slice(0, -1)
             }));
@@ -22,7 +39,7 @@ class Frame extends React.Component {
     }
 
     render() {
-        return <g id={this.props.id} onKeyDown={this.onKeyDown} tabIndex={this.props.tabIndex}>
+        return <g id={this.props.id} onKeyDown={this.onKeyDown} tabIndex={this.props.tabIndex} className={this.state.correct ? "correct" : ""}>
             <rect className="frame-rect" x={this.props.x} y={this.props.y} width="29.624" height="189.752" transform={this.props.transform} />
             <text className="frame-text" transform={this.props.textTransform}>
                 <tspan x={this.props.textOffset} y="0">{this.state.text}</tspan>

@@ -41,10 +41,10 @@ class Clock extends React.Component {
                     <rect x="75.924" y="639.694" width="37.898" height="2.139" fill="#854f26" stroke="none" strokeLinejoin="miter"/>
                     <ellipse rx="2.907" ry="2.907" transform="translate(94.875 636.593) rotate(131.612)" stroke="none" strokeLinejoin="miter" fill="url(#RadialGradient)"/>
 
-                    <Frame id="northFrame" text="NORTH" tabIndex="1" x="0.001" y="-94.876" transform="translate(94.876, 812) rotate(90)" textTransform="translate(94.601 820.821) scale(1 -1)" textOffset="-41.914"></Frame>
-                    <Frame id="eastFrame" text="EAST" tabIndex="2" x="-14.812" y="-94.876" transform="translate(174.941 717.389) rotate(180)" textTransform="matrix(0 -1 -1 0 168.674 717.53)" textOffset="-51.499"></Frame>
-                    <Frame id="southFrame" text="SOUTH" tabIndex="3" x="-14.812" y="-94.876" transform="translate(94.876 608) rotate(-90)" textTransform="translate(94.786 601.434) scale(1 -1)" textOffset="-51.41"></Frame>
-                    <Frame id="westFrame" text="WEST" tabIndex="4" x="-14.812" y="-94.876" transform="translate(14.813 717.389)" textTransform="matrix(0 1 1 0 21.081 717.604)" textOffset="-47.623"></Frame>
+                    <Frame id="northFrame" direction="NORTH" tabIndex="1" x="0.001" y="-94.876" transform="translate(94.876, 812) rotate(90)" textTransform="translate(94.601 820.821) scale(1 -1)" textOffset="-41.914"></Frame>
+                    <Frame id="eastFrame" direction="EAST" tabIndex="2" x="-14.812" y="-94.876" transform="translate(174.941 717.389) rotate(180)" textTransform="matrix(0 -1 -1 0 168.674 717.53)" textOffset="-51.499"></Frame>
+                    <Frame id="southFrame" direction="SOUTH" tabIndex="3" x="-14.812" y="-94.876" transform="translate(94.876 608) rotate(-90)" textTransform="translate(94.786 601.434) scale(1 -1)" textOffset="-51.41"></Frame>
+                    <Frame id="westFrame" direction="WEST" tabIndex="4" x="-14.812" y="-94.876" transform="translate(14.813 717.389)" textTransform="matrix(0 1 1 0 21.081 717.604)" textOffset="-47.623"></Frame>
 
                 </g>
             </svg>
