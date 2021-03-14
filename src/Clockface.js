@@ -23,6 +23,7 @@ const secondScale = minuteScale;
 
 const sunrise = d3.interpolate("#68c2d8", "#021b2f");
 
+// qq: stick this in component state properly
 let handData = [
     {
         type: 'hour',
@@ -46,6 +47,11 @@ let handData = [
 ];
 
 class Clockface extends React.Component {
+    constructor(props) {
+        super(props);
+        this.tick = this.tick.bind(this);
+    }
+
     updateData() {
         var t = new Date();
         handData[0].value = (t.getHours() % 12) + t.getMinutes() / 60;
@@ -87,12 +93,15 @@ class Clockface extends React.Component {
                 transform={"rotate(" + hand.scale(hand.value) +")"}></line>);
     }
 
-    render() {
+    tick() {
         this.updateData();
+        this.moveHands();
         this.advanceBackground();
-        setInterval(this.updateData, 1000);
-        setInterval(this.moveHands, 1000);
-        setInterval(this.advanceBackground, 1000);
+    }
+
+    render() {
+        this.tick();
+        setInterval(this.tick, 1000);
         return (
             <g id="clock-face" transform="translate(94.876 750.319) scale(1 -1)">
                 {this.drawHourLabels()}
