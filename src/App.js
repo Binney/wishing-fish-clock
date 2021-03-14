@@ -1,12 +1,16 @@
 import './App.css';
 import Clock from './Clock';
+import Help from './Help';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Clock></Clock>
       </header>
+      <Clock></Clock>
+      <footer>
+        <Help />
+      </footer>
     </div>
   );
 }

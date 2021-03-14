@@ -1,0 +1,20 @@
+div.help {
+    display: flex;
+    float: right;
+    margin: 2rem;
+}
+
+button.help-button {
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+span.help-message {
+    margin-top: 3px;
+    margin-right: 0.5rem;
+    color: white;
+}
